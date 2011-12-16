@@ -1,0 +1,12 @@
+checkExists 1
+checkExists 15
+insert 30
+checkExists 30
+checkNotExists 31
+insert 31
+checkExists 31
+delete 31
+checkNotExists 31
+checkExists 1
+checkExists 15
+checkExists 30

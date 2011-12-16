@@ -1,0 +1,79 @@
+<project name="bdsim" default="run" basedir=".">
+
+	<property name="src" location="${basedir}/src" />
+	<property name="test" location="${basedir}/test" />
+	<property name="bin" location="${basedir}/bin" />
+	<property name="doc" location="${basedir}/doc" />
+	<property name="lib" location="${basedir}/lib" />
+	<property name="www" location="/pro/web/web/people/wpijewsk/bdsim" />
+	
+	<property name="log4j" location="${lib}/log4j-1.2.14.jar" />	
+
+	<property name="server.class" value="bdsim.server.main.BDSimulator" />
+	<property name="client.class" value="bdsim.client.BDClient" />
+
+	<property name="file" value="test/files/Bank.xml" />
+
+	<path id="all-path">
+		<pathelement path="${src}" />	
+		<pathelement path="${test}" />	
+
+		<pathelement path="${bin}" />
+			
+		<pathelement path="${log4j}" />		
+		<pathelement path="${jogl}" />			
+	</path>
+
+	<target name="javadoc-web">
+		<javadoc access="private" packagenames="bdsim.*" sourcepath="src" destdir="${www}/doc" author="true" version="true" use="true">
+			<classpath refid="all-path" />
+		</javadoc>
+		<exec dir="${www}" executable="webupdate" />
+	</target> 	
+	
+	<target name="clean-web">
+		<delete dir="${www}/doc" />
+		<exec dir="${www}" executable="webupdate" />
+	</target> 	
+	
+	<target name="javadoc">
+		<javadoc access="private" packagenames="bdsim.*" sourcepath="src" destdir="${doc}" author="true" version="true" use="true">
+			<classpath refid="all-path" />
+		</javadoc>
+	</target> 	
+
+	<target name="clean">
+		<delete dir="${bin}" />
+		<delete dir="${doc}" />
+	</target>
+
+	<target name="clean-doc">
+		<delete dir="${doc}" />
+	</target>
+
+	<target name="compile">
+		<mkdir dir="${bin}" />
+		<javac srcdir="${basedir}/src" destdir="${basedir}/bin">
+			<classpath refid="all-path" />
+		</javac>
+	</target>
+
+	<target name="run-client" depends="compile">
+		<java fork="true" classname="${client.class}">
+			<classpath refid="all-path" />
+		</java>
+	</target>
+
+	<target name="run" depends="compile">
+		<java fork="true" classname="${server.class}">
+			<classpath refid="all-path" />
+			<arg value="${file}"/>
+		</java>
+	</target>
+	
+	<target name="run-log" depends="compile">
+		<java fork="true" classname="bdsim.server.system.log.BDLogTester">
+			<classpath refid="all-path" />
+		</java>
+	</target>	
+</project>

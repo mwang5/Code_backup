@@ -1,0 +1,15 @@
+I am using the Accounts index as a testing tree. so at beginning we have a 17 item B+ tree.
+
+1. testscript: 
+	a. first I delete 1 to 17 for checking delete item in every first leaf node util nothing left. this is the check delete_entry(leaf) and delete_entry(inner node) (but not throughly)and find(). I check checkExists or checkNotExists through all testscript.
+	b. then add node sequencially from 1 to 35. this is a partially test for insert() and insert_in_parent(). 
+	c. Next step delete the leaf between item in first leaf node and last leaf node. I think this fully test the function. the test left three items in root. these numbers are randomly picked and test include deleting from every leaf node. so far, the deletion is fully tested.
+	d. insertion for 35 to 1 in sequence on first 35 to 16 and then randomly insert 15 to 1. I think this throughly test the insert() and insert_in_parent().
+
+	I spent a lot of time on testing. because sometime outofBoundsException will come up and need check the error. I think I have experienced all the exceptions but I am not 100% sure. Thank you for grading my homework.
+
+2. Implementation:
+	Basically, I followed the algorithm pseudo code on appendix 2 to finish five inner classes.  and call a print to print the num of operations.
+
+3. Performance Discusstion:
+	Generally, A b+ Tree with larger node m_d value have less operations. I think this is because with larger node, the level of a tree will less so leads the Ops less. but the time consumed seems doesnt less. Maybe this is because it needs more time to seek in a block. node with less m_d value cost more operation due to level become more. it needs time to seek throught blocks. m_d size is larger means we need larger block size which is I think is a bad idea for memory management and it is also hard to recovery if one block is fail.  

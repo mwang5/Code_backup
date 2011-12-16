@@ -1,0 +1,5 @@
+INSERT into Customers VALUES (31., 'Bill', 'Pijewski', '054-87-4504')
+INSERT into Customers VALUES (32., 'Bill', 'Pijewski', '054-87-4504')
+INSERT into Customers VALUES (33., 'Bill', 'Pijewski', '054-87-4504')
+INSERT into Customers VALUES (34., 'Bill', 'Pijewski', '054-87-4504')
+INSERT into Customers VALUES (35., 'Bill', 'Pijewski', '054-87-4504')
