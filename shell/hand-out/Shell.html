@@ -1,0 +1,641 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html dir="ltr" xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en"><head>
+
+	
+		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+		<meta http-equiv="Content-Style-Type" content="text/css">
+		<meta name="generator" content="MediaWiki 1.15.1">
+		<meta name="keywords" content="Assignment/Shell,Programming Guide">
+		<link rel="shortcut icon" href="http://weenix.cs.brown.edu/favicon.ico">
+		<link rel="search" type="application/opensearchdescription+xml" href="http://weenix.cs.brown.edu/mediawiki/opensearch_desc.php" title="WeenixWiki (en)">
+		<link rel="alternate" type="application/rss+xml" title="WeenixWiki RSS Feed" href="http://weenix.cs.brown.edu/mediawiki/index.php?title=Special:RecentChanges&amp;feed=rss">
+		<link rel="alternate" type="application/atom+xml" title="WeenixWiki Atom Feed" href="http://weenix.cs.brown.edu/mediawiki/index.php?title=Special:RecentChanges&amp;feed=atom">
+		<title>Assignment/Shell - WeenixWiki</title>
+		<link rel="stylesheet" href="Shell_files/shared.css" type="text/css" media="screen">
+		<link rel="stylesheet" href="Shell_files/commonPrint.css" type="text/css" media="print">
+		<link rel="stylesheet" href="Shell_files/main.css" type="text/css" media="screen">
+		<!--[if lt IE 5.5000]><link rel="stylesheet" href="/mediawiki/skins/monobook/IE50Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 5.5000]><link rel="stylesheet" href="/mediawiki/skins/monobook/IE55Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 6]><link rel="stylesheet" href="/mediawiki/skins/monobook/IE60Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<!--[if IE 7]><link rel="stylesheet" href="/mediawiki/skins/monobook/IE70Fixes.css?207" type="text/css" media="screen" /><![endif]-->
+		<link rel="stylesheet" href="Shell_files/index_003.css" type="text/css">
+		<link rel="stylesheet" href="Shell_files/index_002.css" type="text/css" media="print">
+		<link rel="stylesheet" href="Shell_files/index_004.css" type="text/css">
+		<link rel="stylesheet" href="Shell_files/index.css" type="text/css">
+		<!--[if lt IE 7]><script type="text/javascript" src="/mediawiki/skins/common/IEFixes.js?207"></script>
+		<meta http-equiv="imagetoolbar" content="no" /><![endif]-->
+
+		<script type="text/javascript">/*<![CDATA[*/
+		var skin = "monobook";
+		var stylepath = "/mediawiki/skins";
+		var wgArticlePath = "/mediawiki/index.php/$1";
+		var wgScriptPath = "/mediawiki";
+		var wgScript = "/mediawiki/index.php";
+		var wgVariantArticlePath = false;
+		var wgActionPaths = {};
+		var wgServer = "http://weenix.cs.brown.edu";
+		var wgCanonicalNamespace = "";
+		var wgCanonicalSpecialPageName = false;
+		var wgNamespaceNumber = 0;
+		var wgPageName = "Assignment/Shell";
+		var wgTitle = "Assignment/Shell";
+		var wgAction = "view";
+		var wgArticleId = "1436";
+		var wgIsArticle = true;
+		var wgUserName = null;
+		var wgUserGroups = null;
+		var wgUserLanguage = "en";
+		var wgContentLanguage = "en";
+		var wgBreakFrames = false;
+		var wgCurRevisionId = 3364;
+		var wgVersion = "1.15.1";
+		var wgEnableAPI = true;
+		var wgEnableWriteAPI = true;
+		var wgSeparatorTransformTable = ["", ""];
+		var wgDigitTransformTable = ["", ""];
+		var wgRestrictionEdit = ["autoconfirmed"];
+		var wgRestrictionMove = ["autoconfirmed"];
+		var wgRestrictionRead = [];
+		/*]]>*/</script>
+
+		<script type="text/javascript" src="Shell_files/wikibits.js"><!-- wikibits js --></script>
+		<!-- Head Scripts -->
+		<script type="text/javascript">
+				function toggleSecurityInfo() {
+					var info = document.getElementById('security-info');
+					info.style.display = info.style.display ? '' : 'none';
+				}</script>		<script type="text/javascript" src="Shell_files/ajax.js"></script>
+<style type="text/css">/*<![CDATA[*/
+.source-c {line-height: normal;}
+.source-c li, .source-c pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for c
+ * CSS class: source-c, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.c.source-c .de1, .c.source-c .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.c.source-c  {font-family:monospace;}
+.c.source-c .imp {font-weight: bold; color: red;}
+.c.source-c li, .c.source-c .li1 {font-weight: normal; vertical-align:top;}
+.c.source-c .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.c.source-c .li2 {font-weight: bold; vertical-align:top;}
+.c.source-c .kw1 {color: #b1b100;}
+.c.source-c .kw2 {color: #000000; font-weight: bold;}
+.c.source-c .kw3 {color: #000066;}
+.c.source-c .kw4 {color: #993333;}
+.c.source-c .co1 {color: #666666; font-style: italic;}
+.c.source-c .co2 {color: #339933;}
+.c.source-c .coMULTI {color: #808080; font-style: italic;}
+.c.source-c .es0 {color: #000099; font-weight: bold;}
+.c.source-c .es1 {color: #000099; font-weight: bold;}
+.c.source-c .es2 {color: #660099; font-weight: bold;}
+.c.source-c .es3 {color: #660099; font-weight: bold;}
+.c.source-c .es4 {color: #660099; font-weight: bold;}
+.c.source-c .es5 {color: #006699; font-weight: bold;}
+.c.source-c .br0 {color: #009900;}
+.c.source-c .sy0 {color: #339933;}
+.c.source-c .st0 {color: #ff0000;}
+.c.source-c .nu0 {color: #0000dd;}
+.c.source-c .nu6 {color: #208080;}
+.c.source-c .nu8 {color: #208080;}
+.c.source-c .nu12 {color: #208080;}
+.c.source-c .nu16 {color:#800080;}
+.c.source-c .nu17 {color:#800080;}
+.c.source-c .nu18 {color:#800080;}
+.c.source-c .nu19 {color:#800080;}
+.c.source-c .me1 {color: #202020;}
+.c.source-c .me2 {color: #202020;}
+.c.source-c .ln-xtra, .c.source-c li.ln-xtra, .c.source-c div.ln-xtra {background-color: #ffc;}
+.c.source-c span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/mediawiki/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style><style type="text/css">/*<![CDATA[*/
+.source-bash {line-height: normal;}
+.source-bash li, .source-bash pre {
+	line-height: normal; border: 0px none white;
+}
+/**
+ * GeSHi Dynamically Generated Stylesheet
+ * --------------------------------------
+ * Dynamically generated stylesheet for bash
+ * CSS class: source-bash, CSS id: 
+ * GeSHi (C) 2004 - 2007 Nigel McNie, 2007 - 2008 Benny Baumann
+ * (http://qbnz.com/highlighter/ and http://geshi.org/)
+ * --------------------------------------
+ */
+.bash.source-bash .de1, .bash.source-bash .de2 {font: normal normal 1em/1.2em monospace; margin:0; padding:0; background:none; vertical-align:top;}
+.bash.source-bash  {font-family:monospace;}
+.bash.source-bash .imp {font-weight: bold; color: red;}
+.bash.source-bash li, .bash.source-bash .li1 {font-weight: normal; vertical-align:top;}
+.bash.source-bash .ln {width:1px;text-align:right;margin:0;padding:0 2px;vertical-align:top;}
+.bash.source-bash .li2 {font-weight: bold; vertical-align:top;}
+.bash.source-bash .kw1 {color: #000000; font-weight: bold;}
+.bash.source-bash .kw2 {color: #c20cb9; font-weight: bold;}
+.bash.source-bash .kw3 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .co0 {color: #666666; font-style: italic;}
+.bash.source-bash .co1 {color: #800000;}
+.bash.source-bash .co2 {color: #cc0000; font-style: italic;}
+.bash.source-bash .co3 {color: #000000; font-weight: bold;}
+.bash.source-bash .es1 {color: #000099; font-weight: bold;}
+.bash.source-bash .es2 {color: #007800;}
+.bash.source-bash .es3 {color: #007800;}
+.bash.source-bash .es4 {color: #007800;}
+.bash.source-bash .es5 {color: #780078;}
+.bash.source-bash .es_h {color: #000099; font-weight: bold;}
+.bash.source-bash .br0 {color: #7a0874; font-weight: bold;}
+.bash.source-bash .sy0 {color: #000000; font-weight: bold;}
+.bash.source-bash .st0 {color: #ff0000;}
+.bash.source-bash .st_h {color: #ff0000;}
+.bash.source-bash .nu0 {color: #000000;}
+.bash.source-bash .re0 {color: #007800;}
+.bash.source-bash .re1 {color: #007800;}
+.bash.source-bash .re2 {color: #007800;}
+.bash.source-bash .re4 {color: #007800;}
+.bash.source-bash .re5 {color: #660033;}
+.bash.source-bash .ln-xtra, .bash.source-bash li.ln-xtra, .bash.source-bash div.ln-xtra {background-color: #ffc;}
+.bash.source-bash span.xtra { display:block; }
+
+/*]]>*/
+</style>
+<style type="text/css">/*<![CDATA[*/
+@import "/mediawiki/index.php?title=MediaWiki:Geshi.css&usemsgcache=yes&action=raw&ctype=text/css&smaxage=18000";
+/*]]>*/
+</style>		<script type="text/javascript" src="Shell_files/index.php"><!-- site js --></script>
+	</head><body class="mediawiki ltr ns-0 ns-subject page-Assignment_Shell skin-monobook">
+	<div id="globalWrapper">
+		<div id="column-content">
+	<div id="content">
+		<a name="top" id="top"></a>
+				<h1 id="firstHeading" class="firstHeading">Assignment/Shell</h1>
+		<div id="bodyContent">
+			<h3 id="siteSub">From WeenixWiki</h3>
+			<div id="contentSub"></div>
+									<div id="jump-to-nav">Jump to: <a href="#column-one">navigation</a>, <a href="#searchInput">search</a></div>			<!-- start content -->
+			<div id="security-info-toggle">There are <span onclick="toggleSecurityInfo()"><a href="javascript:">security restrictions</a></span> on this article</div>
+<div id="security-info" style="display: none;"><ul>
+<li><b>edit</b> is restricted to the <b>autoconfirmed</b> group <i>(set from the <b>protect tab</b>)</i></li>
+<li><b>move</b> is restricted to the <b>autoconfirmed</b> group <i>(set from the <b>protect tab</b>)</i></li>
+</ul>
+</div>
+<table>
+<tbody><tr>
+<td> <b>Assignment Out:</b>
+</td><td> Sept. 7 (Wednesday)
+</td></tr>
+<tr>
+<td> <b>Assignment Due:</b>
+</td><td> Sept. 19 (Monday 11:59PM)
+</td></tr></tbody></table>
+<p>This is the first assignment in this class.  It must be completed by both CS167 and CS169 students.
+</p><p>Please remember to read the course <a href="http://weenix.cs.brown.edu/mediawiki/index.php/Programming_Guide" title="Programming Guide">programming guide</a> for good style guidelines.
+</p>
+<table id="toc" class="toc" summary="Contents"><tbody><tr><td><div id="toctitle"><h2>Contents</h2> <span class="toctoggle">[<a href="javascript:toggleToc()" class="internal" id="togglelink">hide</a>]</span></div>
+<ul>
+<li class="toclevel-1"><a href="#Introduction"><span class="tocnumber">1</span> <span class="toctext">Introduction</span></a></li>
+<li class="toclevel-1"><a href="#The_Assignment"><span class="tocnumber">2</span> <span class="toctext">The Assignment</span></a>
+<ul>
+<li class="toclevel-2"><a href="#The_File_System"><span class="tocnumber">2.1</span> <span class="toctext">The File System</span></a></li>
+<li class="toclevel-2"><a href="#Files.2C_File_Descriptors.2C_Terminal_I.2FO"><span class="tocnumber">2.2</span> <span class="toctext">Files, File Descriptors, Terminal I/O</span></a></li>
+<li class="toclevel-2"><a href="#Executing_a_Program"><span class="tocnumber">2.3</span> <span class="toctext">Executing a Program</span></a></li>
+<li class="toclevel-2"><a href="#Built-In_Shell_Commands"><span class="tocnumber">2.4</span> <span class="toctext">Built-In Shell Commands</span></a></li>
+<li class="toclevel-2"><a href="#UNIX_System_Calls_for_Built-In_Functions"><span class="tocnumber">2.5</span> <span class="toctext">UNIX System Calls for Built-In Functions</span></a></li>
+<li class="toclevel-2"><a href="#File_Redirection"><span class="tocnumber">2.6</span> <span class="toctext">File Redirection</span></a></li>
+</ul>
+</li>
+<li class="toclevel-1"><a href="#Parsing_the_Command_Line"><span class="tocnumber">3</span> <span class="toctext">Parsing the Command Line</span></a></li>
+<li class="toclevel-1"><a href="#Use_of_External_Functions"><span class="tocnumber">4</span> <span class="toctext">Use of External Functions</span></a></li>
+<li class="toclevel-1"><a href="#Style"><span class="tocnumber">5</span> <span class="toctext">Style</span></a></li>
+<li class="toclevel-1"><a href="#Code_Exchange"><span class="tocnumber">6</span> <span class="toctext">Code Exchange</span></a></li>
+<li class="toclevel-1"><a href="#Extra_Credit"><span class="tocnumber">7</span> <span class="toctext">Extra Credit</span></a></li>
+</ul>
+</td></tr></tbody></table><script type="text/javascript"> if (window.showTocToggle) { var tocShowText = "show"; var tocHideText = "hide"; showTocToggle(); } </script>
+<a name="Introduction" id="Introduction"></a><h2> <span class="mw-headline"> Introduction </span></h2>
+<p>In this assignment you will be writing your own UNIX shell. A shell
+is typically used to allow users to run other programs in a friendly
+environment, often offering features such as command history and job
+control. Shells are also interpreters, running programs written using
+the shell's language (shell scripts).
+</p><p>Your shell will have the same basic functionality as the shells you are used to working in (e.g. <code>csh</code>, <code>tcsh</code>, <code>bash</code>)—meaning
+it will allow the user to type in the name of an executable, with
+arguments, and then execute it. The shell will also provide a few
+built-in commands, such as <code>cd</code>, as well as some basic
+features such as file redirection. You don't need to implement anything
+not described on this page (e.g. history, job control, tab completion).
+</p><p>The purpose of this assignment is to introduce you to the C
+language, especially C string parsing and system calls. Therefore we
+are restricting the library functions you are allowed to use in order
+to force you to call system calls directly.
+</p><p>To run the TA shell demo, run <code>/course/cs167/demo/shell/shell</code>.
+</p>
+<a name="The_Assignment" id="The_Assignment"></a><h2> <span class="mw-headline"> The Assignment </span></h2>
+<p>Your job is fairly simple: your shell must display a prompt and wait
+until the user types in a line of input. It must then do some simple
+text parsing on the input and take the appropriate action. For example,
+some input is passed on to built-in shell commands, while other inputs
+specify external programs to be <i>executed</i> by your shell.
+</p><p>Additionally, the command line may contain some special
+characters which will correspond to file redirection. The shell must
+set up the appropriate files to deal with this. <i>As you know, users are far from perfect; your shell should have good error-checking.</i>
+</p>
+<a name="The_File_System" id="The_File_System"></a><h3> <span class="mw-headline"> The File System </span></h3>
+<p>Crucial to understanding how your shell will work is a working knowledge of the UNIX VFS (Virtual File System) model.
+</p><p>In the VFS model, there is a root file system denoted as "<code>/</code>", and zero or more mounted file systems which reside at mount points, like "<code>/dev</code>".
+All file systems expose an internal structure of directories and files:
+within the root file system there might be subdirectories such as "<code>/bin</code>", "<code>/home</code>", "<code>/home/joeuser</code>", and "<code>/home/joeuser/src</code>". There are also files within these directories, like <code>sh.c</code> and <code>README</code>.
+Mounted file systems behave just like root file systems except that
+names of files within the file system are prefixed with the mount
+point.
+</p><p>The effect of all this is to abstract the particular way of
+accessing a file (the on-disk structure) from the fact that a file
+exists. In fact, some file systems might have no on-disk structure at
+all, and simply provide names that behave like files for other
+purposes. For instance, files in "<code>/proc</code>" are not really stores anywhere, they simply provide a file interface to kernel data structures.
+</p>
+<a name="Files.2C_File_Descriptors.2C_Terminal_I.2FO" id="Files.2C_File_Descriptors.2C_Terminal_I.2FO"></a><h3> <span class="mw-headline"> Files, File Descriptors, Terminal I/O </span></h3>
+<p>To explain how files are represented in UNIX, consider the <code>open</code> system call, which opens a file:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">int</span> open<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span> <span class="sy0">*</span>path<span class="sy0">,</span> <span class="kw4">int</span> oflag<span class="sy0">,</span> mode_t mode<span class="br0">)</span><span class="sy0">;</span></pre></div></div>
+<ul><li> <code>path</code>  = pathname of the file to open
+</li><li> <code>oflag</code> = combination of access modes and status flags
+</li><li> <code>mode</code>  = default permissions for the file if it needs to be created
+</li></ul>
+<p><code>open</code> returns an integer which is a <i>file descriptor</i>
+(often abbreviated as "fd"). File descriptors are references to the
+open file in user mode. Instead of having access to the kernel-level <code>file</code> struct, users make system calls (like <code>read(2)</code>) that take file descriptors as input.
+</p><p>Each process inherits three standard file descriptors from its
+parent: input, output, and error. These are assigned file descriptors
+0, 1, and 2, respectively. You will start your shell from your regular
+UNIX shell (e.g. <code>bash</code>), which might set these first three
+file descriptors using code similar to this (note that this is grossly
+over simplified, your actual code needs to take redirection in to
+account):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span>fork<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="coMULTI">/* now in the child process */</span>
+    close<span class="br0">(</span><span class="nu0">0</span><span class="br0">)</span><span class="sy0">;</span>
+    close<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+    close<span class="br0">(</span><span class="nu0">2</span><span class="br0">)</span><span class="sy0">;</span>
+    open<span class="br0">(</span><span class="st0">"/dev/tty"</span><span class="sy0">,</span> O_RDONLY<span class="br0">)</span><span class="sy0">;</span>
+    open<span class="br0">(</span><span class="st0">"/dev/tty"</span><span class="sy0">,</span> O_WRONLY<span class="br0">)</span><span class="sy0">;</span>
+    open<span class="br0">(</span><span class="st0">"/dev/tty"</span><span class="sy0">,</span> O_WRONLY<span class="br0">)</span><span class="sy0">;</span>
+<span class="br0">}</span></pre></div></div>
+<p>Since file descriptors are assigned in increasing numerical order,
+we are assured that file descriptor 0, 1, and 2 are assigned correctly.
+This in turn means that to write to the terminal, all you need to do is
+call:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="c source-c"><pre class="de1">write<span class="br0">(</span><span class="nu0">1</span><span class="sy0">,</span> <span class="st0">"foo"</span><span class="sy0">,</span> <span class="nu0">3</span><span class="br0">)</span><span class="sy0">;</span></pre></div></div>
+<p>If you are having trouble remembering the file descriptor numbers for the standard streams, you can use <code>STDIN_FILENO</code>, <code>STDOUT_FILENO</code>, and <code>STDERR_FILENO</code> (after including <code>unistd.h</code>), which are macros for 0, 1, and 2, respectively.
+</p>
+<a name="Executing_a_Program" id="Executing_a_Program"></a><h3> <span class="mw-headline"> Executing a Program </span></h3>
+<p>Executing a program in UNIX takes several steps. The <code>fork(2)</code> system call creates a new child process which is a replica of the parent, and begins execution at the point that the call to <code>fork(2)</code> returns. <code>fork(2)</code> returns 0 to the child process, and the child's process id (abbreviated <code>pid</code>) to the parent.
+</p><p>The <code>execve(2)</code> system call begins the execution of a
+new program and if it succeeds it will not return. It is passed the
+path of the program to be executed, an argument list (<code>argv</code>), and a list of environment strings (<code>envp</code>). <code>argv</code> and <code>envp</code> are null-terminated arrays of pointers to strings (character arrays). The command:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw3">echo</span> Hello world<span class="sy0">!</span></pre></div></div>
+<p>would have an <code>argv</code> that looks like this:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">char</span> <span class="sy0">*</span>argv<span class="br0">[</span><span class="nu0">4</span><span class="br0">]</span><span class="sy0">;</span>
+argv<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span> <span class="sy0">=</span> <span class="st0">"/bin/echo"</span><span class="sy0">;</span>
+argv<span class="br0">[</span><span class="nu0">1</span><span class="br0">]</span> <span class="sy0">=</span> <span class="st0">"Hello"</span><span class="sy0">;</span>
+argv<span class="br0">[</span><span class="nu0">2</span><span class="br0">]</span> <span class="sy0">=</span> <span class="st0">"world!"</span><span class="sy0">;</span>
+argv<span class="br0">[</span><span class="nu0">3</span><span class="br0">]</span> <span class="sy0">=</span> NULL<span class="sy0">;</span></pre></div></div>
+<p>The environment strings <code>envp</code> are a set of strings of the form "<code>variable=value</code>". Processes typically access these through the <code>libc</code> function <code>getenv(3)</code>. Run the command:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">/</span>usr<span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw2">env</span></pre></div></div>
+<p>in a shell to list all the environment variables set in your shell (and passed to <code>env</code> via <code>execve(2)</code> when you ran the command). You are not required to keep track of environment variables for this assignment, (just pass <code>NULL</code> for <code>envp</code>, this may break some programs, as a work around if you want you can have your <code>main</code> function take not only the standard <code>argc</code> and <code>argv</code> but also a third argument, <code>char *envp[]</code> which will get the environment of the program which executes your shell, then pass this along to <code>execve</code>) but you may implement setting and un-setting them for extra credit.
+</p><p>Here is an example of forking and executing a new process:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw1">if</span> <span class="br0">(</span><span class="sy0">!</span>fork<span class="br0">(</span><span class="br0">)</span><span class="br0">)</span> <span class="br0">{</span>
+    <span class="coMULTI">/* now in child process */</span>
+    <span class="kw4">char</span> <span class="sy0">*</span>envp<span class="br0">[</span><span class="br0">]</span> <span class="sy0">=</span> <span class="br0">{</span> NULL <span class="br0">}</span><span class="sy0">;</span>
+&nbsp;
+    execve<span class="br0">(</span>argv<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy0">,</span> argv<span class="sy0">,</span> envp<span class="br0">)</span><span class="sy0">;</span>
+&nbsp;
+    <span class="coMULTI">/* we won't get here unless execve failed */</span>
+    <span class="kw1">if</span> <span class="br0">(</span>errno <span class="sy0">==</span> ENOENT<span class="br0">)</span> <span class="br0">{</span>
+        fprintf<span class="br0">(</span>stderr<span class="sy0">,</span> <span class="st0">"sh: command not found&nbsp;%s<span class="es1">\n</span>"</span><span class="sy0">,</span> argv<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="br0">)</span><span class="sy0">;</span>
+        exit<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span> <span class="kw1">else</span> <span class="br0">{</span>
+        fprintf<span class="br0">(</span>stderr<span class="sy0">,</span> <span class="st0">"sh: execution of&nbsp;%s failed:&nbsp;%s<span class="es1">\n</span>"</span><span class="sy0">,</span> argv<span class="br0">[</span><span class="nu0">0</span><span class="br0">]</span><span class="sy0">,</span> strerror<span class="br0">(</span>errno<span class="br0">)</span><span class="br0">)</span><span class="sy0">;</span>
+        exit<span class="br0">(</span><span class="nu0">1</span><span class="br0">)</span><span class="sy0">;</span>
+    <span class="br0">}</span>
+<span class="br0">}</span>
+<span class="coMULTI">/* continue parent process execution */</span></pre></div></div>
+<p>Note that your shell needs to wait for the executed command to
+finish before continuing (and displaying a new prompt). Look at the man
+page for the <code>wait(2)</code> system call.
+</p>
+<a name="Built-In_Shell_Commands" id="Built-In_Shell_Commands"></a><h3> <span class="mw-headline"> Built-In Shell Commands </span></h3>
+<p>In addition to supporting the spawning of external programs, your
+shell will support a few built-in commands. When a built-in command is
+input, your shell should make the necessary system calls to handle the
+request and return control back to the user. The following is a list of
+the built-in commands that your shell should provide:
+</p>
+<ul><li> <code>cd</code> <i>dir</i>: change the current working directory
+</li><li> <code>ln</code> <i>src</i> <i>dest</i>: makes a hard link to a file
+</li><li> <code>rm</code> <i>file</i>: remove a directory entry
+</li><li> <code>exit</code>: quit the shell
+</li></ul>
+<p>Note that we are only looking for the basic behavior of these
+commands. You do not need to implement flags to these commands such as <code>rm -r</code> or <code>ln -s</code>. You also do not need to support multiple arguments to <code>rm</code>
+or multiple commands on a single line. Your shell should print out a
+descriptive error message if the user enters a malformed command.
+</p>
+<a name="UNIX_System_Calls_for_Built-In_Functions" id="UNIX_System_Calls_for_Built-In_Functions"></a><h3> <span class="mw-headline"> UNIX System Calls for Built-In Functions </span></h3>
+<p>To implement these commands you will need to understand the
+functionality of several Linux system calls. You can read the man pages
+for these commands by running:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="kw2">man</span> <span class="nu0">2</span> <span class="sy0">&lt;</span>syscall<span class="sy0">&gt;</span></pre></div></div>
+<p>for the syscall you want information on. It is highly recommended
+that you read all of the man pages for these syscalls before even
+starting to implement built-in commands:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="c source-c"><pre class="de1"><span class="kw4">int</span> open<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> path<span class="sy0">,</span> <span class="kw4">int</span> oflag<span class="sy0">,</span> mode_t mode<span class="br0">)</span><span class="sy0">;</span>
+<span class="kw4">int</span> close<span class="br0">(</span><span class="kw4">int</span> fd<span class="br0">)</span><span class="sy0">;</span>
+<span class="kw4">int</span> chdir<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> path<span class="br0">)</span><span class="sy0">;</span>
+<span class="kw4">int</span> link<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> existing<span class="sy0">,</span> <span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> new<span class="br0">)</span><span class="sy0">;</span>
+<span class="kw4">int</span> unlink<span class="br0">(</span><span class="kw4">const</span> <span class="kw4">char</span><span class="sy0">*</span> path<span class="br0">)</span><span class="sy0">;</span></pre></div></div>
+<a name="File_Redirection" id="File_Redirection"></a><h3> <span class="mw-headline"> File Redirection </span></h3>
+<p>From the <code>sh(1)</code> man page:
+</p>
+<div style="border-style: dotted; background-color: rgb(243, 251, 255);">
+<p>A command's input and output may be redirected using a special
+notation interpreted by the shell. (You do not need to support
+redirection for built-in commands.) The following may appear anywhere
+in a <i>simple-command</i> or may precede or follow a command and are <i>not</i> passed on as arguments to the invoked command.
+</p>
+<ul><li> &lt; <i>word</i> - Use file <i>word</i> as standard input (file descriptor 0).
+</li><li> &gt; <i>word</i> - Use file <i>word</i> as standard output
+(file descriptor 1). If the file does not exist, it is created;
+otherwise, it is truncated to zero length. (See the description of the
+O_CREAT and O_TRUNC flags in the open(2) man page.)
+</li><li> &gt;&gt; <i>word</i> - Use file <i>word</i> as standard output. If the file exists, output is appended to it; otherwise the file is created. (See the description
+</li></ul>
+<p>of the O_APPEND flag in the open(2) man page.)
+</p>
+</div>
+<p>You must code your parser to support file redirection and appending,
+with error checking. For example, if the shell fails to create the file
+to which output should be redirected, the shell must report this error
+and abort execution of the specified program. If multiple input or
+output redirections appear, this is also an error (i.e. it is illegal
+to redirect standard input twice, it is perfectly legal to redirect
+both input and output). To understand the details of file redirection
+it will be helpful to experiment with redirection in <code>bash</code> (some other shells have different redirection conventions).
+</p>
+<a name="Parsing_the_Command_Line" id="Parsing_the_Command_Line"></a><h2> <span class="mw-headline"> Parsing the Command Line </span></h2>
+<p>A significant part of your implementation will most likely be the
+command line parsing. Redirection symbols may appear anywhere on the
+command line, and the file name appears as the next word after the
+redirection symbol. One algorithm for parsing the command line is as
+follows:
+</p>
+<ul><li> Scan through the line for redirection symbols, keeping track
+of the input and output file names if they exist. Check for errors such
+as multiple redirection or missing file names (i.e. a redirection token
+that is not followed by a file name) at this point.
+</li><li> Remove all traces of redirection from the command line (i.e. replace the relevant characters with blanks).
+</li><li> Split the line in to words. The first word will be the command, and each subsequent word will be an argument to the command.
+</li></ul>
+<p>Most symbols and words are separated by one or more spaces or tabs.
+Redirection characters may be separated from arguments by spaces or
+tabs. There need not be spaces or tabs before the first word on the
+line. Special characters such as control characters should be treated
+just like alphanumeric characters and should not crash your shell. You
+do not need to special case quotes (in most shells quotes would group
+several words into a single argument that contains white space).
+</p><p>Be very careful to check for error conditions at all stages of
+command line parsing. Since the shell is controlled by a user, it is
+possible to receive bizarre input. For example, your shell should be
+able to handle all these errors (as well as many others):
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw2">cat</span> <span class="sy0">&lt;</span> foo <span class="sy0">&lt;</span> gub</pre></div></div>
+<p>ERROR - can't have 2 input redirects on one line
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw2">cat</span> <span class="sy0">&lt;</span></pre></div></div>
+<p>ERROR - no redirection file specified
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">&gt;</span> gub</pre></div></div>
+<p>ERROR - no command specified. Make sure file <code>gub</code> is not overwritten.
+</p><p>Your shell should also handle bizarre yet correct input:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">&lt;</span> bar <span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw2">cat</span></pre></div></div>
+<p>OK - redirection can appear anywhere in the input.
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="br0">[</span>TAB<span class="br0">]</span><span class="sy0">/</span>bin<span class="sy0">/</span><span class="kw2">ls</span> <span class="sy0">&lt;</span><span class="br0">[</span>TAB<span class="br0">]</span> foo</pre></div></div>
+<p>OK - any amount of whitespace is acceptable.
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="sy0">/</span>bin<span class="sy0">/</span>bug <span class="re5">-p1</span> <span class="re5">-p2</span> foobar</pre></div></div>
+<p>OK - make sure parameters are parsed correctly.
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="kw2">cat</span><span class="sy0">&gt;</span>bar<span class="sy0">&lt;</span>README</pre></div></div>
+<p>OK - no whitespace between redirection symbols is acceptable.
+</p><p>You will not be held responsible if your input buffer is not big
+enough to handle user input. Use a large buffer size (e.g. 1024) and
+assume that the user will not enter more than that many characters.
+Note that in future assignments you will be responsible for handling
+similar cases.
+</p>
+<a name="Use_of_External_Functions" id="Use_of_External_Functions"></a><h2> <span class="mw-headline"> Use of External Functions </span></h2>
+<p>You should use the <code>read(2)</code> and <code>write(2)</code> system calls to read and write from file descriptors 0, 1, and 2. Do not use C++ iostreams <i>cin</i>, <i>cout</i>, or <i>cerr</i> or C stdio (<code>fopen</code>, <code>fread</code>, etc.). Part of the purpose of this assignment is to learn about system calls you'll be implementing later on in the semester.
+</p><p>You may use any syscalls (functions with section 2 man pages)
+your heart desires. Do not use floating point numbers. If you have any
+questions about functions that you are able to use, please email the
+TAs.
+</p><p>In order to avoid confusion here is a list of the non-syscall functions allowed. Note that you can't use <code>strtok()</code>; part of the assignment is to practice C string manipulation.
+</p>
+<table border="1">
+<tbody><tr>
+<td><code>s(n)printf</code>
+</td><td><code>isalnum</code>
+</td><td><code>str(n)cpy</code>
+</td><td><code>isalpha</code>
+</td></tr>
+<tr>
+<td><code>str(n)cat</code>
+</td><td><code>iscntrl</code>
+</td><td><code>str(n)cmp</code>
+</td><td><code>isdigit</code>
+</td></tr>
+<tr>
+<td><code>str(r)chr</code>
+</td><td><code>islower</code>
+</td><td><code>str(c)spn</code>
+</td><td><code>isgraph</code>
+</td></tr>
+<tr>
+<td><code>strpbrk</code>
+</td><td><code>isprint</code>
+</td><td><code>strstr</code>
+</td><td><code>ispunct</code>
+</td></tr>
+<tr>
+<td><code>strlen</code>
+</td><td><code>isspace</code>
+</td><td><code>strerror</code>
+</td><td><code>isupper</code>
+</td></tr>
+<tr>
+<td><code>exit</code>
+</td><td><code>memcpy</code>
+</td><td><code>isxdigit</code>
+</td><td><code>malloc</code>
+</td></tr>
+<tr>
+<td><code>memmove</code>
+</td><td><code>tolower</code>
+</td><td><code>free</code>
+</td><td><code>memcmp</code>
+</td></tr>
+<tr>
+<td><code>toupper</code>
+</td><td><code>assert</code>
+</td><td><code>memchr</code>
+</td><td><code>perror</code>
+</td></tr>
+<tr>
+<td><code>memset</code>
+</td><td><code>readdir</code>
+</td><td><code>opendir</code>
+</td><td><code>closedir</code>
+</td></tr></tbody></table>
+<p>Another important aspect of parsing the command line is knowing how to handle <code>Ctrl+D</code>. When the user enters some text on the command line followed by <code>Ctrl+D</code>, handle it as a newline. If the user does not enter anything but <code>Ctrl+D</code> the shell should exit.
+</p><p>A common question is how to wait for the user to input some text. You should note that the <code>read(2)</code> system call will block until the user enters a new line or <code>Ctrl+D</code>.
+</p>
+<a name="Style" id="Style"></a><h2> <span class="mw-headline"> Style </span></h2>
+<p>As this class will consist of many large programs all written in C,
+we will be emphasizing good style early on in order to make sure that
+your future code is easy for you and your TAs to understand. Therefore
+style will determine part of your grade on this project. We don't have
+any strict rules saying how many spaces you should indent, but we
+require that you <i>indent consistently</i>. Clean up unused variables
+and blocks of code before handing in, give variables and functions
+meaningful names, and remember that one of the TAs will have to read
+and make sense of your code once you turn it in. You can take a look at
+the course <a href="http://weenix.cs.brown.edu/mediawiki/index.php/Programming_Guide" title="Programming Guide">Programming Guide</a> for some guidelines to follow.
+</p>
+<a name="Code_Exchange" id="Code_Exchange"></a><h2> <span class="mw-headline"> Code Exchange </span></h2>
+<p>To get started, copy the <code>/course/cs167/asgn/shell</code> directory and start hacking <code>sh.c</code>. To run your program type 
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ .<span class="sy0">/</span><span class="kw2">sh</span></pre></div></div>
+<p>Note the '.' before '<code>sh</code>'. To debug your program, run:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="kw2">gdb</span> <span class="kw2">sh</span></pre></div></div>
+<p>When the <code>gdb</code> prompt appears type <code>run</code>.
+</p><p>You will need to write a <code>README</code> file documenting
+any bugs you have in your code, any extra features you added, and
+anything else you think we should know about your shell.
+</p><p>You should hand in your shell by running:
+</p>
+<div dir="ltr" style="text-align: left;"><div class="bash source-bash"><pre class="de1">$ <span class="kw2">make</span> clean
+$ <span class="sy0">/</span>course<span class="sy0">/</span>cs167<span class="sy0">/</span>bin<span class="sy0">/</span>cs167_handin shell</pre></div></div>
+<p>from the directory containing your code.
+</p>
+<a name="Extra_Credit" id="Extra_Credit"></a><h2> <span class="mw-headline"> Extra Credit </span></h2>
+<p>Here are some suggestions for extra credit:
+</p>
+<ul><li> <code>PATH</code>, either as an environment variable, or just as a hard coded search path.
+</li><li> <code>rm -r</code>
+</li><li> environment variables (<code>setenv</code>, <code>printenv</code>, and passing the environment to processes via <code>execve</code>.
+</li></ul>
+
+<!-- 
+NewPP limit report
+Preprocessor node count: 106/1000000
+Post-expand include size: 1324/2097152 bytes
+Template argument size: 996/2097152 bytes
+Expensive parser function count: 0/100
+-->
+<div class="printfooter">
+Retrieved from "<a href="http://weenix.cs.brown.edu/mediawiki/index.php/Assignment/Shell">http://weenix.cs.brown.edu/mediawiki/index.php/Assignment/Shell</a>"</div>
+						<!-- end content -->
+						<div class="visualClear"></div>
+		</div>
+	</div>
+		</div>
+		<div id="column-one">
+	<div id="p-cactions" class="portlet">
+		<h5>Views</h5>
+		<div class="pBody">
+			<ul>
+	
+				 <li id="ca-nstab-main" class="selected"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Assignment/Shell" title="View the content page [alt-shift-c]" accesskey="c">Page</a></li>
+				 <li id="ca-talk"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Talk:Assignment/Shell" title="Discussion about the content page [alt-shift-t]" accesskey="t">Discussion</a></li>			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-personal">
+		<h5>Personal tools</h5>
+		<div class="pBody">
+			<ul>
+				<li id="pt-login"><a href="http://weenix.cs.brown.edu/mediawiki/index.php?title=Special:UserLogin&amp;returnto=Assignment/Shell" title="You are encouraged to log in; however, it is not mandatory [alt-shift-o]" accesskey="o">Log in</a></li>
+			</ul>
+		</div>
+	</div>
+	<div class="portlet" id="p-logo">
+		<a style="background-image: url(/mediawiki/logo.png);" href="http://weenix.cs.brown.edu/mediawiki/index.php/Main_Page" title="Visit the main page [alt-shift-z]" accesskey="z"></a>
+	</div>
+	<script type="text/javascript"> if (window.isMSIE55) fixalpha(); </script>
+	<div class="generated-sidebar portlet" id="p-navigation">
+		<h5>Navigation</h5>
+		<div class="pBody">
+			<ul>
+				<li id="n-mainpage-description"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Main_Page">Main Page</a></li>
+				<li id="n-portal"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/WeenixWiki:Community_Portal" title="About the project, what you can do, where to find things">Community portal</a></li>
+				<li id="n-currentevents"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/WeenixWiki:Current_events" title="Find background information on current events">Current events</a></li>
+				<li id="n-recentchanges"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Special:RecentChanges" title="The list of recent changes in the wiki [alt-shift-r]" accesskey="r">Recent changes</a></li>
+				<li id="n-randompage"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Special:Random" title="Load a random page [alt-shift-x]" accesskey="x">Random page</a></li>
+				<li id="n-help"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Help:Contents" title="The place to find out">Help</a></li>
+			</ul>
+		</div>
+	</div>
+	<div id="p-search" class="portlet">
+		<h5><label for="searchInput">Search</label></h5>
+		<div id="searchBody" class="pBody">
+			<form action="/mediawiki/index.php" id="searchform"><div>
+				<input name="title" value="Special:Search" type="hidden">
+				<input id="searchInput" name="search" title="Search WeenixWiki [alt-shift-f]" accesskey="f" type="text">
+				<input name="go" class="searchButton" id="searchGoButton" value="Go" title="Go to a page with this exact name if exists" type="submit">&nbsp;
+				<input name="fulltext" class="searchButton" id="mw-searchButton" value="Search" title="Search the pages for this text" type="submit">
+			</div></form>
+		</div>
+	</div>
+	<div class="portlet" id="p-tb">
+		<h5>Toolbox</h5>
+		<div class="pBody">
+			<ul>
+				<li id="t-whatlinkshere"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Special:WhatLinksHere/Assignment/Shell" title="List of all wiki pages that link here [alt-shift-j]" accesskey="j">What links here</a></li>
+				<li id="t-recentchangeslinked"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Special:RecentChangesLinked/Assignment/Shell" title="Recent changes in pages linked from this page [alt-shift-k]" accesskey="k">Related changes</a></li>
+<li id="t-specialpages"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/Special:SpecialPages" title="List of all special pages [alt-shift-q]" accesskey="q">Special pages</a></li>
+				<li id="t-print"><a href="http://weenix.cs.brown.edu/mediawiki/index.php?title=Assignment/Shell&amp;printable=yes" rel="alternate" title="Printable version of this page [alt-shift-p]" accesskey="p">Printable version</a></li>				<li id="t-permalink"><a href="http://weenix.cs.brown.edu/mediawiki/index.php?title=Assignment/Shell&amp;oldid=3364" title="Permanent link to this revision of the page">Permanent link</a></li>			</ul>
+		</div>
+	</div>
+		</div><!-- end of the left (by default at least) column -->
+			<div class="visualClear"></div>
+			<div id="footer">
+				<div id="f-poweredbyico"><a href="http://www.mediawiki.org/"><img src="Shell_files/poweredby_mediawiki_88x31.png" alt="Powered by MediaWiki"></a></div>
+			<ul id="f-list">
+					<li id="lastmod"> This page was last modified on 14 September 2011, at 14:36.</li>
+					<li id="viewcount">This page has been accessed 2,557 times.</li>
+					<li id="privacy"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/WeenixWiki:Privacy_policy" title="WeenixWiki:Privacy policy">Privacy policy</a></li>
+					<li id="about"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/WeenixWiki:About" title="WeenixWiki:About">About WeenixWiki</a></li>
+					<li id="disclaimer"><a href="http://weenix.cs.brown.edu/mediawiki/index.php/WeenixWiki:General_disclaimer" title="WeenixWiki:General disclaimer">Disclaimers</a></li>
+			</ul>
+		</div>
+</div>
+
+		<script type="text/javascript">if (window.runOnloadHook) runOnloadHook();</script>
+<!-- Served in 1.102 secs. --></body></html>

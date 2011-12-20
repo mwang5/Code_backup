@@ -1,0 +1,45 @@
+===========================================================================
+ Assignment      : Shell
+ Student Account : mwang5
+ Tentative Grade : 89
+
+ Grading TA      : bcrow
+===========================================================================
+ "Tentative Grade" is your grade before any adjustment for days late.
+===========================================================================
+
+Category                                                        Points
+--------------------------------------------------------------------------
+Built-ins: 5 each for ln, rm, cd, exit                          20 / 20
+
+Executing Binaries                                              13 / 15
+You shouldn't merely appened /bin in front of any command the user types -- the
+real command might be in /usr/bin, for example.
+
+Redirection: < > >>                                             10 / 15
+The following redirections fail:
+/bin/echo appended >> append.tmp
+< redirect_beginning.input /bin/cat
+/usr/bin/tr 0 > testresult < input 1
+< input /usr/bin/tr > testresult 0 1
+
+Error messages                                                  15 / 15
+Nit: Should display error message if there are too many args to a builtin
+(e.g., rm a b).
+
+Parsing                                                         30 / 30
+
+Style                                                           4 / 5
+Code duplication (two calls to fork() -- one with redirection and one without).
+
+Extra Credit (10 max)                                           2 / 0
+PATH in prompt (using getcwd)
+
+Deductions
+Many memory leaks and accessing invalid memory (use valgrind)	- 5
+
+
+Total:                                                          89 / 100
+
+Comments:
+
