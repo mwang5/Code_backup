@@ -1,0 +1,77 @@
+I wrote all aligners in JAVA.
+
+
+1. Run:
+There are four JAVA souce code files. The arguments are passed by args[0], args[1], args[2], args[3], args[4], args[5]. The first
+two arguments are path to FASTA files in String type, the others are int type scores. 
+
+a. If running the programs under Eclipse. set the args[] under run -> Run Configuration -> Arguments.
+For example. If you want to run Global_Algner with two FASTA file a.txt and b.txt uner diretory ~/your_machine/ and match score 1,
+mismatch and indels for -1. Then pass to argument field: 
+
+~/your_machine/a.txt ~/your_machine/b.txt 1 -1 -1 
+
+The result include marix, optimal score and aligned sequences.
+
+b. If running the programs under Windows, first compile the source file using javac, then run the class file using java.
+For example, If you want to run Global_Algner with two FASTA file a.txt and b.txt uner diretory ~/your_machine/ and match score 1,
+mismatch and indels for -1. Then run the following command under command line.
+
+> javac Global_Aligner.java
+> java Global_Algner ~/your_machine/a.txt ~/your_machine/b.txt 1 -1 -1
+
+
+2. Design:
+The implementation of the compute matrix algorithm is all followed the algrithm in book, assignment and wikipedia. For traceback and print:
+ a. Global Alignment: start from the last corner to the first corner.
+ b. Local Alignment: start from the highest score cell until the cell score greater than 0.
+ c. Fitting Alignment: start from the highest score cell in the last row and traceback until the shorter sequence finished. 
+ d. Global Alignment with AGP: I finshed the filling(algorithm) the matrix part. trying to debug why there is a infinite loop in 
+ traceback. but it doesnt work properply.
+ e. Human-mouse Orthology: Most part is from the code in fitting alignment, I returned the aligned seqences into a list so that
+  I could get in main to process.New stuff is parsing the two files, now if the line contains ">" then jump through this line end
+  with a newline,then put the info below it together. so e.g in mouse.fa we have a array with 5 strings. String[0] only contains a 
+  "\n". I calculate the sequence identity directly in main. If two fitting sequences have same character, then put it into a new 
+  String. at last compute the ratio.
+  
+  
+3. Flaws:
+  a. For global, local, fitting alignment. the each file only could contain one legal FASTA epression like  
+mouse.fa
+>chr5:38,212,668-38,212,766
+CGGCAACATGGGTTTCGCGGCCATCTTCAGCTTCTCCAGCTCCGCCTCCTGCAGTCTCTT
+GGCCTTAGCGCGACGGTTCTGGAACCAGATCTTCACCTG
+
+human.fa
+>chr5:29,766,392-29,766,522
+GGTAAAGAAGTTTGATGCTATCTATAGAGATGGAGGTGAGGGGAAAGAACTGGACAACCT
+CTTTACCATGATTGCCCATTTGTACAACTTCCACGTGGTACAGTCTATCCTCATCTTTGA
+CATTTTAAAGA
+Because I only simply skip first line of the file to get the sequences.
+
+b. I try to elimate all possible bugs to generate the correct answer for any possible sequences. I have found some and fixed 
+them. But I am not sure if there is still more.
+
+c. For fitting and last program. its better to put shorter sequence in first argument and longer in second one. I tested with
+short sequences and put either shorter or longer in first and the other in second. It is working. but I am not sure for long 
+sequences.
+
+d. Affine Gap penalty program doesn't work properly.
+
+
+4. Human-Mouse Orthology Report
+Orthology 1:
+Match! ! ! At mouse sequence: 1 Human sequence: 51 with sequence identity: 0.8888888888888888
+CGGCAACATGGGTTTCGCGGCCATCTTCAGCTTCTCCAGCTCCGCCTCCTGCAGTCTCTTGGCCTTAGCGCGACGGTTCTGGAACCAGATCTTCACCTG
+_GGCAGCATGGGCTTGGCGGCCATCTTCAGCTTCTCCAGCTCTGCCTCTTGTAGTCTCTTTGCCTTGGCGCGGCGGTTCTGGAACCATATCTTCACCTG
+Ortholog sequence: GGCACATGGGTTGCGGCCATCTTCAGCTTCTCCAGCTCGCCTCTGAGTCTCTTGCCTTGCGCGCGGTTCTGGAACCAATCTTCACCTG
+Orthology 2:
+Match! ! ! At mouse sequence: 3 Human sequence: 177 with sequence identity: 0.9130434782608695
+TTACTCTTTGCCAGGACAATTTCTGGGGTGTCTGTAATACATGTGAACTTCAGCTGGTCTGCAGGCTGGCGATACTTCCTGTCACTCAGGAT
+TTATTCTTTGCTAGGACAATTTCCGGAGTGTCGGTAATGCATGTGAATTTGAGCTGGTCTGCAGGCTGGCGATACTTCCTGTCACTCAGGAT
+Ortholog sequence: TTATCTTTGCAGGACAATTTCGGGTGTCGTAATCATGTGAATTAGCTGGTCTGCAGGCTGGCGATACTTCCTGTCACTCAGGAT
+Orthology 3
+Match! ! ! At mouse sequence: 4 Human sequence: 113 with sequence identity: 0.95
+TTCCTGGACTGGGGATCCCGGCTAAATATAGCTGTTTCTCTCTGTCTTACAACACAGGCTCCAGTATATAAATCAGGCAA
+TTCCTGGACTGGGGATCCCGGCTAAATATAGCTG__T_T_TCTGTCTTACAACACAGGCTCCAGTATATAAATCAGGCAA
+Ortholog sequence: TTCCTGGACTGGGGATCCCGGCTAAATATAGCTGTTTCTGTCTTACAACACAGGCTCCAGTATATAAATCAGGCAA:
